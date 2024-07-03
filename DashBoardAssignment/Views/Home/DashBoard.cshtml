@@ -1,0 +1,115 @@
+﻿@*@model DashBoardAssignment.Models.Equipment*@
+
+@using DashBoardAssignment.Models
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Dashboard. User: @Session["User"].ToString() </h1>
+
+<div class="row">
+    <div class="col col-4">
+        <div class="card text-center">
+            <div class="card-header">
+                List Equipment
+            </div>
+            <div class="card-body">
+                <table>
+                    <tr>
+                        <th style="display:none">ID</th>
+                        <th>Name</th>
+                        <th>Count</th>
+                        <th>Date</th>
+                    </tr>
+
+                    @{
+                        List<Equipment> equipment = Equipment.LstEquipment();
+
+                        foreach (Equipment obj in equipment)
+                        {
+                            <tr>
+                                <td style="display: none">@obj.EquipmentId</td>
+                                <td>@obj.Name</td>
+                                <td>@obj.Count</td>
+                                <td>@obj.EntryDate</td>
+                            </tr>
+
+                        }
+                    }
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div class="col col-4">
+        <div class="card text-center">
+            <div class="card-header">
+                Member List
+            </div>
+            <div class="card-body">
+                @*<table>
+                    <tr>
+                        <th style="display:none">ID</th>
+                        <th>Name</th>
+                        <th>Count</th>
+                        <th>Date</th>
+                    </tr>
+
+                    @{
+                        List<Equipment> equipment2 = Equipment.LstEquipment();
+
+                        foreach (Equipment obj in equipment)
+                        {
+                            <tr>
+                                <td style="display: none">@obj.EquipmentId</td>
+                                <td>@obj.Name</td>
+                                <td>@obj.Count</td>
+                                <td>@obj.EntryDate</td>
+                            </tr>
+
+                        }
+                    }
+                </table>*@
+            </div>
+
+        </div>
+    </div>
+    <div class="col col-4">
+        <div class="card text-center">
+            <div class="card-header">
+                List Equipment
+            </div>
+            <div class="card-body">
+                @*<table>
+                    <tr>
+                        <th style="display:none">ID</th>
+                        <th>Name</th>
+                        <th>Count</th>
+                        <th>Date</th>
+                    </tr>
+
+                    @{
+                        List<Equipment> equipment3 = Equipment.LstEquipment();
+
+                        foreach (Equipment obj in equipment)
+                        {
+                            <tr>
+                                <td style="display: none">@obj.EquipmentId</td>
+                                <td>@obj.Name</td>
+                                <td>@obj.Count</td>
+                                <td>@obj.EntryDate</td>
+                            </tr>
+
+                        }
+                    }
+                </table>*@
+            </div>
+
+        </div>
+    </div>
+</div>
+
+   
+
